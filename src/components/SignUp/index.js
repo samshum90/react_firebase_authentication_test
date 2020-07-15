@@ -8,7 +8,7 @@ import { withFirebase } from '../Firebase';
 const SignUp = () => (
     <div>
         <h1>
-            <SignUpForm />
+            Sign Up
         </h1>
         <SignUpForm />
     </div>
@@ -20,7 +20,7 @@ const INITIAL_STATE = {
     passwordOne:'',
     passwordTwo:'',
     error: null,
-}
+};
 
 class SignUpFormBase extends Component {
     constructor(props) {
