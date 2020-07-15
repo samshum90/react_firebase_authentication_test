@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import  { BrowserRouter as Router, Route } from 'react-router-dom';
 import Navigation from '../Navigation';
 import Landing from '../Landing';
@@ -8,22 +8,14 @@ import PasswordForget from '../PasswordForget';
 import Home from '../Home';
 import Account from '../Account';
 import Admin from '../Admin';
+
 import * as ROUTES from '../../constants/routes'
-class App extends Component {
-  constructor(props) {
-    super(props);
+import { withAuthentication } from '../Session'
 
-    this.state = {
-      authUser: null,
-    };
-  }
-
-  render(){
-    return (
-  
+const App = () => (
       <Router>
         <div>
-          <Navigation authUser={this.state.authUser} />
+          <Navigation />
 
           <Route exact path={ROUTES.LANDING} component={Landing} />
           <Route path={ROUTES.SIGN_UP} component={SignUp} />
@@ -34,8 +26,6 @@ class App extends Component {
           <Route path={ROUTES.ADMIN} component={Admin} />
         </div>
       </Router>
-    );
-  }
-}
-  
-export default App;
+);
+
+export default withAuthentication(App);
