@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {withFirebase} from '../Firebase'
+import { withFirebase } from '../Firebase'
 
 const INITIAL_STATE = {
     passwordOne: '',
@@ -56,7 +56,7 @@ class PasswordChangeForm extends Component {
                     Reset My Password
                 </button>
 
-                {error && <p>{errormessage}</p>}
+                {error && <p>{error.message}</p>}
             </form>
         );
     }
